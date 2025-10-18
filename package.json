@@ -1,22 +1,44 @@
 {
-  "name": "delivery-app",
+  "name": "Delivery App",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "lint": "expo lint"
   },
   "dependencies": {
+    "@react-navigation/native": "^7.1.18",
+    "@react-navigation/native-stack": "^7.3.28",
+    "babel-preset-expo": "~54.0.0",
+    "clsx": "^2.1.1",
     "expo": "~54.0.13",
     "expo-status-bar": "~3.0.8",
+    "nativewind": "^5.0.0-preview.2",
     "react": "19.1.0",
-    "react-native": "0.81.4"
+    "react-hook-form": "^7.65.0",
+    "react-native": "0.81.4",
+    "react-native-css": "^3.0.1",
+    "react-native-reanimated": "~4.1.1",
+    "react-native-safe-area-context": "~5.6.0",
+    "react-native-screens": "~4.16.0"
   },
   "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
+    "@tailwindcss/postcss": "^4.1.14",
     "@types/react": "~19.1.0",
+    "babel-plugin-root-import": "^6.6.0",
+    "eslint-config-expo": "~10.0.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "postcss": "^8.5.6",
+    "prettier-plugin-tailwindcss": "^0.7.1",
+    "tailwindcss": "^4.1.14",
     "typescript": "~5.9.2"
+  },
+  "overrides": {
+    "lightningcss": "1.30.1"
   },
   "private": true
 }
