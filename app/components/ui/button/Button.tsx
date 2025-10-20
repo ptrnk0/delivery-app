@@ -9,8 +9,14 @@ interface IButtonProps extends PressableProps {
 
 export function Button({ className, children, ...props }: IButtonProps) {
   return (
-    <Pressable {...props} className={cn('self-center, mt-3.5', className)}>
-      <Text className={className}>{children}</Text>
+    <Pressable
+      {...props}
+      className={cn(
+        'self-center, mt-3.5 bg-emerald-500 py-4 rounded-2xl items-center',
+        className
+      )}
+    >
+      <Text className='text-white text-base font-semibold'>{children}</Text>
     </Pressable>
   )
 }

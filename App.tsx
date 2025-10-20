@@ -4,10 +4,14 @@ import { Navigation } from '@/navigation/Navigation'
 
 import './global.css'
 
+import { KeyboardProvider } from 'react-native-keyboard-controller'
+
 export default function App() {
   return (
     <SafeAreaProvider>
-      <Navigation />
+      <KeyboardProvider>
+        <Navigation />
+      </KeyboardProvider>
     </SafeAreaProvider>
   )
 }
