@@ -1,8 +1,9 @@
 import cn from 'clsx'
-import React from 'react'
+import React, { useState } from 'react'
 import { Controller } from 'react-hook-form'
-import { Text, TextInput, View } from 'react-native'
+import { TextInput, View } from 'react-native'
 
+import { Text } from '../text/Text'
 import { IFieldProps } from './field.interface'
 
 export function Field<T extends Record<string, any>>({
@@ -12,6 +13,8 @@ export function Field<T extends Record<string, any>>({
   className,
   ...props
 }: IFieldProps<T>) {
+  const [isFocused, setIsFocused] = useState(false)
+
   return (
     <Controller
       control={control}
@@ -26,14 +29,23 @@ export function Field<T extends Record<string, any>>({
             placeholderClassName='text-lg leading-none'
             autoCapitalize='none'
             className={cn(
-              'border-b py-3 text-lg leading-none',
-              error ? 'border-red-500' : 'border-gray-300',
+              'font-poppins text-md border-b py-3 leading-none',
+              error
+                ? 'border-red-500'
+                : isFocused
+                  ? 'border-black'
+                  : 'border-gray-300',
+
               className
             )}
+            onFocus={() => setIsFocused(true)}
             textAlignVertical='center'
             value={value || ''}
             onChangeText={onChange}
-            onBlur={onBlur}
+            onBlur={() => {
+              onBlur()
+              setIsFocused(false)
+            }}
             {...props}
           />
 

@@ -1,14 +1,13 @@
 import { Image } from 'expo-image'
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { Keyboard, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Keyboard, Pressable, StyleSheet, View } from 'react-native'
 import { KeyboardStickyView } from 'react-native-keyboard-controller'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import { Button } from '@/components/ui/button/Button'
+import { Button, Text } from '@/shared/ui'
 
-import { IAuthFormData } from '@/types/auth.interface'
-
+import { IAuthFormData } from '../auth.interface'
 import { AuthFields } from './AuthFields'
 
 export function Auth() {
@@ -36,7 +35,7 @@ export function Auth() {
 
         <KeyboardStickyView offset={{ closed: 0, opened: 200 }}>
           <View className='h-full justify-center px-4'>
-            <Text className='mb-2 text-2xl font-semibold text-black'>
+            <Text className='font-poppins-semibold mb-2 text-2xl text-black'>
               {isReg ? 'Sign Up' : 'Sign In'}
             </Text>
 

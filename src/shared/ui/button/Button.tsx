@@ -1,6 +1,8 @@
 import cn from 'clsx'
 import React from 'react'
-import { Pressable, PressableProps, Text } from 'react-native'
+import { Pressable, PressableProps } from 'react-native'
+
+import { Text } from '../text/Text'
 
 interface IButtonProps extends PressableProps {
   children: React.ReactNode
@@ -12,11 +14,11 @@ export function Button({ className, children, ...props }: IButtonProps) {
     <Pressable
       {...props}
       className={cn(
-        'self-center, mt-3.5 bg-emerald-500 py-4 rounded-2xl items-center',
+        'self-center, mt-3.5 items-center rounded-2xl bg-emerald-500 py-4',
         className
       )}
     >
-      <Text className='text-white text-base font-semibold'>{children}</Text>
+      <Text className='text-base font-semibold text-white'>{children}</Text>
     </Pressable>
   )
 }

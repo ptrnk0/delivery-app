@@ -1,10 +1,10 @@
 import React from 'react'
 import { Control } from 'react-hook-form'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
-import { Field } from '@/components/ui/field/Field'
+import { Field, Text } from '@/shared/ui'
 
-import { IAuthFormData } from '@/types/auth.interface'
+import { IAuthFormData } from '../auth.interface'
 
 interface IAuthFieldsProps {
   control: Control<IAuthFormData>
@@ -14,7 +14,7 @@ export function AuthFields({ control }: IAuthFieldsProps) {
   return (
     <>
       <View className='mb-8'>
-        <Text className='mb-4 text-base font-semibold text-gray-500'>
+        <Text className='font-poppins-semibold mb-4 text-base text-gray-500'>
           Email
         </Text>
 
@@ -34,7 +34,7 @@ export function AuthFields({ control }: IAuthFieldsProps) {
       </View>
 
       <View className='mb-8'>
-        <Text className='mb-4 text-base font-semibold text-gray-500'>
+        <Text className='font-poppins-semibold mb-4 text-base text-gray-500'>
           Password
         </Text>
 
