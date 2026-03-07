@@ -3,3 +3,16 @@
 @import 'tailwindcss/utilities.css';
 
 @import 'nativewind/theme';
+
+@theme {
+  --font-sans: 'Poppins-Regular';
+  --font-poppins: 'Poppins-Regular';
+  --font-poppins-thin: 'Poppins-Thin';
+  --font-poppins-extralight: 'Poppins-ExtraLight';
+  --font-poppins-light: 'Poppins-Light';
+  --font-poppins-medium: 'Poppins-Medium';
+  --font-poppins-semibold: 'Poppins-SemiBold';
+  --font-poppins-bold: 'Poppins-Bold';
+  --font-poppins-extrabold: 'Poppins-ExtraBold';
+  --font-poppins-black: 'Poppins-Black';
+}
