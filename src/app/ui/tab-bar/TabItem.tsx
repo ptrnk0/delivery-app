@@ -2,7 +2,7 @@ import { BottomTabBarProps } from '@react-navigation/bottom-tabs'
 import React from 'react'
 import { Pressable, StyleSheet } from 'react-native'
 
-import { Text } from '../text'
+import { Text } from '@/shared/ui/text'
 
 interface ITabItemProps {
   index: number

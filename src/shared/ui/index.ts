@@ -1,5 +1,4 @@
 export { Button } from './button'
 export { Field } from './field'
 export { Text } from './text'
-export { TabBar } from './tab-bar'
 export * from './icons'

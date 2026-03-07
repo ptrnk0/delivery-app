@@ -12,7 +12,7 @@ import { UserScreen } from '@/pages/user'
 
 import { useSession } from '@/entities/session'
 
-import { TabBar } from '@/shared/ui'
+import { TabBar } from '../ui/tab-bar'
 
 const BottomTab = createBottomTabNavigator({
   tabBar: TabBar,
