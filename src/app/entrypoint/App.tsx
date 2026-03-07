@@ -2,22 +2,23 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 import '../../../global.css'
 
-import { NavigationContainer } from '@react-navigation/native'
 import React from 'react'
 import { KeyboardProvider } from 'react-native-keyboard-controller'
 
 import { SessionProvider } from '../providers'
-import { PrivateRoutes } from '../routes/PrivateRoutes'
+import { Routes } from '../routes'
 
 export default function App() {
   return (
     <SafeAreaProvider>
       <KeyboardProvider>
-        <NavigationContainer>
-          <SessionProvider>
-            <PrivateRoutes />
-          </SessionProvider>
-        </NavigationContainer>
+        <SessionProvider>
+          <Routes />
+
+          {/* {user && currentRoute && (
+              <BottomTabs nav={navRef.navigate} currentRoute={currentRoute} />
+            )} */}
+        </SessionProvider>
       </KeyboardProvider>
     </SafeAreaProvider>
   )

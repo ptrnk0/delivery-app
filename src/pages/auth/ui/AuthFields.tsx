@@ -4,7 +4,7 @@ import { View } from 'react-native'
 
 import { Field, Text } from '@/shared/ui'
 
-import { IAuthFormData } from '../auth.interface'
+import { IAuthFormData } from '../model/auth.types'
 
 interface IAuthFieldsProps {
   control: Control<IAuthFormData>

@@ -4,11 +4,11 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { Text } from '@/shared/ui'
 
-export function HomeScreen() {
+export function FavouriteScreen() {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Text></Text>
+        <Text>Favourite</Text>
       </View>
     </SafeAreaView>
   )

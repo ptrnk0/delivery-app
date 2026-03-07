@@ -7,10 +7,10 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { Button, Text } from '@/shared/ui'
 
-import { IAuthFormData } from '../auth.interface'
+import { IAuthFormData } from '../model/auth.types'
 import { AuthFields } from './AuthFields'
 
-export function Auth() {
+export function AuthScreen() {
   const [isReg, setIsReg] = useState(false)
 
   const { handleSubmit, control } = useForm<IAuthFormData>({
