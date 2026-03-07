@@ -7,11 +7,6 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.cofo-ai.nectar"
@@ -43,6 +38,14 @@
             "./assets/fonts/Poppins-ExtraBold.ttf",
             "./assets/fonts/Poppins-Black.ttf"
           ]
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#00bc7d",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 250
         }
       ]
     ]
