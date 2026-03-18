@@ -7,13 +7,9 @@ import { Text } from '@/shared/ui'
 export function HomeScreen() {
   return (
     <SafeAreaView>
-      <View style={styles.container}>
+      <View className=''>
         <Text></Text>
       </View>
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {}
-})

@@ -5,20 +5,18 @@ import '../../../global.css'
 import React from 'react'
 import { KeyboardProvider } from 'react-native-keyboard-controller'
 
-import { SessionProvider } from '../providers'
+import { SessionProvider, ToastProvider } from '../providers'
 import { Routes } from '../routes'
 
 export default function App() {
   return (
     <SafeAreaProvider>
       <KeyboardProvider>
-        <SessionProvider>
-          <Routes />
-
-          {/* {user && currentRoute && (
-              <BottomTabs nav={navRef.navigate} currentRoute={currentRoute} />
-            )} */}
-        </SessionProvider>
+        <ToastProvider>
+          <SessionProvider>
+            <Routes />
+          </SessionProvider>
+        </ToastProvider>
       </KeyboardProvider>
     </SafeAreaProvider>
   )

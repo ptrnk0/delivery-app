@@ -12,16 +12,45 @@ import { UserScreen } from '@/pages/user'
 
 import { useSession } from '@/entities/session'
 
+import {
+  CartIcon,
+  ExploreIcon,
+  FavouriteIcon,
+  StoreIcon,
+  UserIcon
+} from '@/shared/ui'
+
 import { TabBar } from '../ui/tab-bar'
 
 const BottomTab = createBottomTabNavigator({
   tabBar: TabBar,
+  screenOptions: {
+    headerShown: false
+  },
   screens: {
-    Home: HomeScreen,
-    Cart: CartScreen,
-    Explore: ExploreScreen,
-    Favourite: FavouriteScreen,
-    User: UserScreen
+    Home: {
+      screen: HomeScreen,
+      options: {
+        tabBarIcon: StoreIcon
+      }
+    },
+    Cart: {
+      screen: CartScreen,
+      options: {
+        tabBarIcon: CartIcon
+      }
+    },
+    Explore: {
+      screen: ExploreScreen,
+      options: {
+        tabBarIcon: ExploreIcon
+      }
+    },
+    Favourite: {
+      screen: FavouriteScreen,
+      options: { tabBarIcon: FavouriteIcon }
+    },
+    User: { screen: UserScreen, options: { tabBarIcon: UserIcon } }
   }
 })
 
@@ -30,14 +59,14 @@ const RootStack = createNativeStackNavigator({
   groups: {
     SignedIn: {
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      if: () => !useSession().user,
+      if: () => !!useSession().user,
       screens: {
         Root: BottomTab
       }
     },
     SignedOut: {
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      if: () => !!useSession().user,
+      if: () => !useSession().user,
       screens: {
         Auth: AuthScreen
       }

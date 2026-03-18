@@ -5,7 +5,11 @@ import { SessionContext, TypeUserState } from '@/entities/session'
 
 SplashScreen.preventAutoHideAsync()
 
-export function SessionProvider({ children }: { children: React.ReactNode }) {
+interface ISessionProvideProps {
+  children: React.ReactNode
+}
+
+export function SessionProvider({ children }: ISessionProvideProps) {
   const [user, setUser] = useState<TypeUserState>(null)
 
   useEffect(() => {
