@@ -10,7 +10,7 @@ import { FavouriteScreen } from '@/pages/favourite'
 import { HomeScreen } from '@/pages/home'
 import { UserScreen } from '@/pages/user'
 
-import { useSession } from '@/entities/session'
+import { useIsAuthenticate, useIsNotAuthenticated } from '@/entities/auth'
 
 import {
   CartIcon,
@@ -58,15 +58,13 @@ const RootStack = createNativeStackNavigator({
   screenOptions: { headerShown: false },
   groups: {
     SignedIn: {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      if: () => !!useSession().user,
+      if: useIsAuthenticate,
       screens: {
         Root: BottomTab
       }
     },
     SignedOut: {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      if: () => !useSession().user,
+      if: useIsNotAuthenticated,
       screens: {
         Auth: AuthScreen
       }

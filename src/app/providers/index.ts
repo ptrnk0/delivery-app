@@ -1,2 +1,2 @@
-export { SessionProvider } from './session'
+export { AuthProvider } from './auth'
 export { ToastProvider } from './toast'

@@ -1,3 +1,3 @@
-import { IUser } from '@/entities/session'
+import { IUser } from '@/entities/auth'
 
 export interface IAuthFormData extends Pick<IUser, 'email' | 'password'> {}

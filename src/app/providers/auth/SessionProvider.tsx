@@ -1,15 +1,15 @@
 import * as SplashScreen from 'expo-splash-screen'
 import React, { useEffect, useState } from 'react'
 
-import { SessionContext, TypeUserState } from '@/entities/session'
+import { AuthContext, TypeUserState } from '@/entities/auth'
 
 SplashScreen.preventAutoHideAsync()
 
-interface ISessionProvideProps {
+interface IAuthProviderProps {
   children: React.ReactNode
 }
 
-export function SessionProvider({ children }: ISessionProvideProps) {
+export function AuthProvider({ children }: IAuthProviderProps) {
   const [user, setUser] = useState<TypeUserState>(null)
 
   useEffect(() => {
@@ -24,5 +24,5 @@ export function SessionProvider({ children }: ISessionProvideProps) {
     checkAccessToken()
   }, [])
 
-  return <SessionContext value={{ user, setUser }}>{children}</SessionContext>
+  return <AuthContext value={{ user, setUser }}>{children}</AuthContext>
 }

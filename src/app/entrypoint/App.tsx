@@ -5,7 +5,7 @@ import '../../../global.css'
 import React from 'react'
 import { KeyboardProvider } from 'react-native-keyboard-controller'
 
-import { SessionProvider, ToastProvider } from '../providers'
+import { AuthProvider, ToastProvider } from '../providers'
 import { Routes } from '../routes'
 
 export default function App() {
@@ -13,9 +13,9 @@ export default function App() {
     <SafeAreaProvider>
       <KeyboardProvider>
         <ToastProvider>
-          <SessionProvider>
+          <AuthProvider>
             <Routes />
-          </SessionProvider>
+          </AuthProvider>
         </ToastProvider>
       </KeyboardProvider>
     </SafeAreaProvider>
